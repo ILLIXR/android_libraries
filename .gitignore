@@ -1,0 +1,7 @@
+# Project exclude paths
+*.apk
+*.so
+
+third_party/include
+third_party/**/*.a
+third_party/sdk/etc/haarcascades/
