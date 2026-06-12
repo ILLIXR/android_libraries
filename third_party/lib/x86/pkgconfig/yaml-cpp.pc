@@ -1,0 +1,11 @@
+prefix=/home/friedel/devel/yaml-cpp/install/x86
+exec_prefix=${prefix}
+includedir=/home/friedel/devel/yaml-cpp/install/x86/include
+libdir=/home/friedel/devel/yaml-cpp/install/x86/lib
+
+Name: Yaml-cpp
+Description: A YAML parser and emitter for C++
+Version: 0.8.0
+Requires:
+Libs: -L${libdir} -lyaml-cpp
+Cflags: -I${includedir}
