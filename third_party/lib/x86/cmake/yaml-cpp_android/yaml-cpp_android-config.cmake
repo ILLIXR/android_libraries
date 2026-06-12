@@ -10,7 +10,7 @@
 ####### Any changes to this file will be overwritten by the next CMake run ####
 ####### The input file was yaml-cpp_android-config.cmake.in                            ########
 
-get_filename_component(PACKAGE_PREFIX_DIR "${CMAKE_CURRENT_LIST_DIR}/../../../" ABSOLUTE)
+get_filename_component(PACKAGE_PREFIX_DIR "${CMAKE_CURRENT_LIST_DIR}/../../../../" ABSOLUTE)
 
 macro(set_and_check _var _file)
   set(${_var} "${_file}")
@@ -32,13 +32,13 @@ endmacro()
 ####################################################################################
 
 set_and_check(YAML_CPP_INCLUDE_DIR "${PACKAGE_PREFIX_DIR}/include")
-set_and_check(YAML_CPP_LIBRARY_DIR "${PACKAGE_PREFIX_DIR}/lib")
+set_and_check(YAML_CPP_LIBRARY_DIR "${PACKAGE_PREFIX_DIR}/lib/x86")
 
 # Are we building shared libraries?
 set(YAML_CPP_SHARED_LIBS_BUILT "${PACKAGE_PREFIX_DIR}/ON")
 
 # Our library dependencies (contains definitions for IMPORTED targets)
-include(${PACKAGE_PREFIX_DIR}/lib/cmake/yaml-cpp_android/yaml-cpp_android-targets.cmake)
+include(${PACKAGE_PREFIX_DIR}/lib/x86/cmake/yaml-cpp_android/yaml-cpp_android-targets.cmake)
 
 # These are IMPORTED targets created by yaml-cpp_android-targets.cmake
 set(YAML_CPP_LIBRARIES "yaml-cpp_android")

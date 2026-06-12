@@ -60,7 +60,7 @@ add_library(yaml-cpp::yaml-cpp_android SHARED IMPORTED)
 
 set_target_properties(yaml-cpp::yaml-cpp_android PROPERTIES
   INTERFACE_COMPILE_DEFINITIONS "\$<\$<NOT:\$<BOOL:ON>>:YAML_CPP_STATIC_DEFINE>"
-  INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include"
+  INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/../include"
 )
 
 # Load information for each installed configuration.
