@@ -19,7 +19,7 @@ set(CMAKE_IMPORT_FILE_VERSION 1)
 set(_cmake_targets_defined "")
 set(_cmake_targets_not_defined "")
 set(_cmake_expected_targets "")
-foreach(_cmake_expected_target IN ITEMS yaml-cpp::yaml-cpp)
+foreach(_cmake_expected_target IN ITEMS yaml-cpp::yaml-cpp_android)
   list(APPEND _cmake_expected_targets "${_cmake_expected_target}")
   if(TARGET "${_cmake_expected_target}")
     list(APPEND _cmake_targets_defined "${_cmake_expected_target}")
@@ -55,16 +55,16 @@ if(_IMPORT_PREFIX STREQUAL "/")
   set(_IMPORT_PREFIX "")
 endif()
 
-# Create imported target yaml-cpp::yaml-cpp
-add_library(yaml-cpp::yaml-cpp SHARED IMPORTED)
+# Create imported target yaml-cpp::yaml-cpp_android
+add_library(yaml-cpp::yaml-cpp_android SHARED IMPORTED)
 
-set_target_properties(yaml-cpp::yaml-cpp PROPERTIES
+set_target_properties(yaml-cpp::yaml-cpp_android PROPERTIES
   INTERFACE_COMPILE_DEFINITIONS "\$<\$<NOT:\$<BOOL:ON>>:YAML_CPP_STATIC_DEFINE>"
   INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include"
 )
 
 # Load information for each installed configuration.
-file(GLOB _cmake_config_files "${CMAKE_CURRENT_LIST_DIR}/yaml-cpp-targets-*.cmake")
+file(GLOB _cmake_config_files "${CMAKE_CURRENT_LIST_DIR}/yaml-cpp_android-targets-*.cmake")
 foreach(_cmake_config_file IN LISTS _cmake_config_files)
   include("${_cmake_config_file}")
 endforeach()

@@ -1,4 +1,4 @@
-# - Config file for the yaml-cpp package
+# - Config file for the yaml-cpp_android package
 # It defines the following variables
 #  YAML_CPP_INCLUDE_DIR       - include directory
 #  YAML_CPP_LIBRARY_DIR       - directory containing libraries
@@ -8,7 +8,7 @@
 
 ####### Expanded from @PACKAGE_INIT@ by configure_package_config_file() #######
 ####### Any changes to this file will be overwritten by the next CMake run ####
-####### The input file was yaml-cpp-config.cmake.in                            ########
+####### The input file was yaml-cpp_android-config.cmake.in                            ########
 
 get_filename_component(PACKAGE_PREFIX_DIR "${CMAKE_CURRENT_LIST_DIR}/../../../" ABSOLUTE)
 
@@ -38,9 +38,9 @@ set_and_check(YAML_CPP_LIBRARY_DIR "${PACKAGE_PREFIX_DIR}/lib")
 set(YAML_CPP_SHARED_LIBS_BUILT "${PACKAGE_PREFIX_DIR}/ON")
 
 # Our library dependencies (contains definitions for IMPORTED targets)
-include(${PACKAGE_PREFIX_DIR}/lib/cmake/yaml-cpp/yaml-cpp-targets.cmake)
+include(${PACKAGE_PREFIX_DIR}/lib/cmake/yaml-cpp_android/yaml-cpp_android-targets.cmake)
 
-# These are IMPORTED targets created by yaml-cpp-targets.cmake
-set(YAML_CPP_LIBRARIES "yaml-cpp")
+# These are IMPORTED targets created by yaml-cpp_android-targets.cmake
+set(YAML_CPP_LIBRARIES "yaml-cpp_android")
 
-check_required_components(yaml-cpp)
+check_required_components(yaml-cpp_android)
